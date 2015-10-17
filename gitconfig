@@ -1,0 +1,7 @@
+[user]
+	name = Jeroen van der Wal
+	email = jeroen@stromboli.it
+[credential]
+	helper = manager
+[push]
+	default = simple
