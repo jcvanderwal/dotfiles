@@ -23,9 +23,10 @@ function forsub(){
 
 }
 function forest(){
-	for d in ~/src/estatio ~/src/camel-coda ~/src/estatio-ecp
+	for d in ~/src/github/estatio/estatio ~/src/bitbucket/incodehq/camel-coda ~/src/bitbucket/incodehq/estatio-ecp
 	do
-    		pushd $d
+    	pushd $d > /dev/null
+        pwd
 		eval "$@"
 		popd > /dev/null
     	done
