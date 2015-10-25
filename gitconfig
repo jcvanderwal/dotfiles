@@ -1,9 +1,0 @@
-[user]
-	name = Jeroen van der Wal
-	email = jeroen@stromboli.it
-[credential]
-	helper = osxkeychain
-[push]
-	default = simple
-[core]
-	excludesfile = /Users/jvanderwal/.gitignore_global

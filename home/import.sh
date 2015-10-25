@@ -5,6 +5,5 @@ if [ -z "$1" ]
     exit 1
 fi
 mv ~/.$1 $1
-echo $1 >> file.list
 
 
