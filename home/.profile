@@ -7,6 +7,8 @@ alias mcios='mvn clean install -o -T 1C -DskipTests'
 alias mi='mvn install -T 1C'
 alias mio='mvn install -o -T 1C'
 alias mios='mvn clean install -o -T 1C -DskipTests'
+
+# Git
 alias gf='git fetch'
 alias gm='git merge origin/master --ff-only'
 alias gs='git status'
@@ -59,10 +61,6 @@ alias week='date +%V'
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
-
-
-
-
 function forsub(){
 	for d in `find . ! -path . -type d -maxdepth 1`
 	do
@@ -80,4 +78,28 @@ function forest(){
 		eval "$@"
 		popd > /dev/null
     	done
+}
+
+function repo(){
+    pathe=$(find ~/src -name $1 -type d -maxdepth 3 | head -n 1 )
+    cd $pathe
+}
+
+function mvups(){
+    cmd="mvn versions:update-properties \
+        -DexcludeReactor=false \
+        -DallowSnapshots=true \
+        -DallowMinorUpdates=true \
+        -Dincludes=$1"
+    
+    eval "$cmd"
+}
+
+function mvupr(){
+    cmd="mvn versions:update-properties \
+        -DexcludeReactor=false \
+        -DallowMinorUpdates=true \
+        -Dincludes=$1"
+    echo $cmd
+    eval "$cmd"
 }
