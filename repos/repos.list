@@ -1,9 +1,11 @@
 bitbucket.org   incodehq    estatio-ecp
 bitbucket.org   incodehq    camel-coda
 github.com      estatio     estatio
-github.com      estatio     isis
+github.com      incodehq    isis
 github.com      incodehq    incode-module-commchannel
 github.com      incodehq    incode-module-note
+github.com      incodehq    incode-module-classification
+github.com      incodehq    contactapp
 github.com      jcvanderwal scripts
 github.com      isisaddons  isis-app-kitchensink
 github.com      isisaddons  isis-app-neoapp

@@ -2,8 +2,8 @@
 
 # OSX Preferences
 defaults write -g com.apple.keyboard.fnState -boolean true
-defaults write NSGlobalDomain KeyRepeat -int 0
-defaults write NSGlobalDomain InitialKeyRepeat -int 4
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Git
 git config --global credential.helper osxkeychain

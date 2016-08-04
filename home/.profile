@@ -8,12 +8,16 @@ alias mi='mvn install -T 1C'
 alias mio='mvn install -o -T 1C'
 alias mios='mvn clean install -o -T 1C -DskipTests'
 
+alias mvupisis='mvn versions:update-properties -Dincludes=org.apache.isis.*:* -DallowSnapshots=true -DgenerateBackupPoms=false'
+alias mvupaddons='mvn versions:update-properties -Dincludes=org.isisaddons.*:* -DallowSnapshots=true -DgenerateBackupPoms=false'
+
+
 # Git
 alias gf='git fetch'
-alias gm='git merge origin/master --ff-only'
+alias gmom='git merge origin/master --ff-only'
+alias gmum='git merge upstream/master --ff-only'
 alias gs='git status'
 alias gc='git commit -m'
-alias ll='ls -lhA'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -64,16 +68,16 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 function forsub(){
 	for d in `find . ! -path . -type d -maxdepth 1`
 	do
-    		pushd $d 
+    	pushd $d 
 		eval "$@"
 		popd > /dev/null
     	done
-
 }
+
 function forest(){
 	for d in ~/src/github/estatio/estatio ~/src/bitbucket/incodehq/camel-coda ~/src/bitbucket/incodehq/estatio-ecp
 	do
-    	pushd $d > /dev/null
+    	pushd $d
         pwd
 		eval "$@"
 		popd > /dev/null
@@ -81,7 +85,7 @@ function forest(){
 }
 
 function repo(){
-    pathe=$(find ~/src -name $1 -type d -maxdepth 3 | head -n 1 )
+    pathe=$(find ~/src -mindepth 3 -maxdepth 3 -type d -name $1 | head -n 1 )
     cd $pathe
 }
 
@@ -91,7 +95,7 @@ function mvups(){
         -DallowSnapshots=true \
         -DallowMinorUpdates=true \
         -Dincludes=$1"
-    
+    echo $cmd    
     eval "$cmd"
 }
 
