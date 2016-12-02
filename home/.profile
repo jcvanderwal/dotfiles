@@ -14,8 +14,8 @@ alias mvupaddons='mvn versions:update-properties -Dincludes=org.isisaddons.*:* -
 
 # Git
 alias gf='git fetch'
-alias gmom='git merge origin/master --ff-only'
-alias gmum='git merge upstream/master --ff-only'
+alias gmo='git merge origin/`git rev-parse --abbrev-ref HEAD` --ff-only'
+alias gmu='git merge upstream/`git rev-parse --abbrev-ref HEAD` --ff-only'
 alias gs='git status'
 alias gc='git commit -m'
 
