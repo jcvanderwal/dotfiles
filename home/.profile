@@ -75,7 +75,7 @@ function forsub(){
 }
 
 function forest(){
-	for d in ~/src/github/estatio/estatio ~/src/bitbucket/incodehq/camel-coda ~/src/bitbucket/incodehq/estatio-ecp
+	for d in ~/src/github/estatio/estatio ~/src/bitbucket/incodehq/estatio-ecp
 	do
     	pushd $d
         pwd
