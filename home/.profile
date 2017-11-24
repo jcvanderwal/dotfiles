@@ -35,6 +35,7 @@ alias p="cd ~/projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
+alias st="open -a SourceTree ./"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -107,3 +108,11 @@ function mvupr(){
     echo $cmd
     eval "$cmd"
 }
+
+function mvs(){
+    cmd="mvn versions:set -DnewVersion=$1 -DgenerateBackupPoms=false"
+    echo $cmd
+    eval "$cmd"
+}
+
+
